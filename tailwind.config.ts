@@ -40,7 +40,8 @@ const config: Config = {
     fontFamily: {
       'lemon': ['Lemon'],
       'unbounded': ['Unbounded'],
-      'carter': ['Carter One']
+      'carter': ['Carter One'],
+      'nunito': ['Nunito']
     },
   },
   plugins: [],
