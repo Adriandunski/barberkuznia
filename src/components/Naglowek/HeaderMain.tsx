@@ -2,15 +2,19 @@
 
 import {useCallback, useEffect, useRef} from "react";
 import {useInView} from "react-intersection-observer";
-import { motion } from "framer-motion";
+import {useMediaQuery} from "react-responsive";
+import "./headerMain.css"
 
 export default function HeaderMain() {
-    let heightMainView : number;
+    let heightMainView: number;
     const scrollRef = useRef(0);
     const headerRef = useRef<HTMLDivElement>();
     const {ref: inViewRef, inView} = useInView({
         threshold: 0.1
     });
+    const hiddenRef = useRef<HTMLDivElement>(null);
+
+    const isBigScreen = useMediaQuery({query: '(min-width: 768px)'})
 
     const setRefs = useCallback(
         (node: HTMLDivElement) => {
@@ -18,6 +22,12 @@ export default function HeaderMain() {
             inViewRef(node);
         }, [inViewRef]
     )
+
+    function hideMenu() {
+        if (!isBigScreen) {
+            hiddenRef.current?.classList.toggle("toHide");
+        }
+    }
 
 
     useEffect(() => {
@@ -47,34 +57,48 @@ export default function HeaderMain() {
     },);
 
     return (
-        <>
-            <header ref={setRefs} className={`z-50 p-7 fixed top-0 left-0 w-full transition duration-500`}>
-                <div className={'flex justify-between items-center'}>
-                    <div className={'font-black text-3xl text-white font-lemon flex'}>
-                        <img src={"kowadlo.png"} className={"h-10"}/>
-                    </div>
-                    <div>
-                        <div className={'px-3 flex justify-center space-x-10 font-bold bg-white/30 backdrop-blur-lg backdrop-brightness-[0.80] rounded-md'}>
-                            <motion.div whileHover={{ scale: 1.1 }}
-                                        whileTap={{ scale: 0.9 }} className={"py-3 px-4 rounded-lg hover:cursor-pointer"}>
-                                <a className={"text-white"}>Strona głowna</a>
-                            </motion.div>
-                            <div className={"py-3 px-4 rounded-lg"}>
-                                <a className={"text-white"}>O nas</a>
-                            </div>
-                            <div className={"py-3 px-4 rounded-lg"}>
-                                <a className={"text-white"}>Usługi</a>
-                            </div>
-                            <div className={"py-3 px-4 rounded-lg"}>
-                                <a className={"text-white"}>Opinie</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={"py-3 px-4 bg-white/30 backdrop-blur-lg backdrop-brightness-[0.80] rounded-md"}>
-                        <a className={"text-white"}>Kontakt</a>
-                    </div>
+
+        <header ref={setRefs}
+                className={`z-50 p-7 fixed top-0 left-0 w-full transition duration-500 text-white font-bold`}>
+            <div className={'flex justify-between items-stretch'}>
+                <div className={'flex items-center'}>
+                    <img src={"kowadlo.png"} className={"h-10"}/>
                 </div>
-            </header>
-        </>
-    );
+                <div ref={hiddenRef}
+                     className={'px-8 py-4 flex basis-3/5 justify-around bg-white/30 backdrop-blur-lg backdrop-brightness-[0.80] rounded-md toHide'}>
+                    <div className={""}>
+                        <a className={""}>Strona Główna</a>
+                    </div>
+                    <div className={""}>
+                        <a className={""}>O nas</a>
+                    </div>
+                    <div className={""}>
+                        <a className={""}>Usługi</a>
+                    </div>
+                    <div className={""}>
+                        <a className={""}>Opinie</a>
+                    </div>
+
+                </div>
+                <button
+                    className={"py-3 px-4 bg-white/30 backdrop-blur-lg backdrop-brightness-[0.80] rounded-md flex justify-center items-center toHide"}>
+                    <a className={"text-white"}>Kontakt</a>
+                </button>
+
+                {isBigScreen ? "" : <button onClick={hideMenu}
+                                            className={"py-3 px-4 bg-white/30 backdrop-blur-lg backdrop-brightness-[0.80] rounded-full flex justify-center items-center"}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
+                         stroke="currentColor" className="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round"
+                              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+                    </svg>
+                </button>
+                }
+
+
+            </div>
+        </header>
+
+    )
+        ;
 }

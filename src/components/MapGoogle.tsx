@@ -11,7 +11,7 @@ export default function MapGoogle() {
                 zoom={15}
                 center={{lat: 50.81799349510598, lng: 19.114408825877298}}
                 gestureHandling={'greedy'}
-                disableDefaultUI={false}
+                disableDefaultUI={true}
                 mapId={"123"}
             >
                 <AdvancedMarker position={{lat: 50.81799349510598, lng: 19.114408825877298}}>

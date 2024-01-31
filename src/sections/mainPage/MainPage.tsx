@@ -5,12 +5,6 @@ import Lizak from "@/sections/mainPage/Lizak";
 import {useEffect} from "react";
 export default function MainPage() {
 
-    let mid : number;
-
-    useEffect(() => {
-        mid = window.innerHeight;
-    }, []);
-
     return(
         <section className={"bg-[url('/mainPage1.jpg')] bg-fixed bg-cover bg-center bg-no-repeat h-screen relative"}>
             <div className={"flex justify-center items-center w-full h-full"}>
