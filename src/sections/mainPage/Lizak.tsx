@@ -25,7 +25,7 @@ export default function Lizak({side}: { side: string }) {
             scale: 1, rotate: 0,
             transition: {type: "spring", delay: 1}
         }} variants={variants} ref={refLizak} className={'absolute'} style={{top: topValue}}>
-            <img src={'/lizak.png'} className={'w-[50px]'}/>
+            <img src={'/lizak.png'} className={'w-[35px] md:w-[50px]'}/>
         </motion.div>
     );
 }

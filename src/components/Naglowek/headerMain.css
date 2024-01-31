@@ -1,5 +1,6 @@
 @media (max-width: 768px) {
     .toHide {
         visibility: hidden;
+        display: none;
     }
 }

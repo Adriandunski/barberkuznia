@@ -14,13 +14,16 @@ export default function Topic ({hiddenX, children } : {hiddenX: number, children
         }
     }, [controls, inView]);
 
+
     return (
-        <div ref={ref} className={"relative inline-block mb-7 text-center"}>
+        <div ref={ref} className={"h-[8rem] overflow-hidden border-2 border-rose-600 flex justify-center"}>
             <motion.div
+                //@ts-ignore
                 variants={variants}
                 initial={"hidden"}
                 transition={{type: "spring", delay: 0.5, duration: 2}}
                 animate={controls}
+                className={"inline-block text-center"}
             >
                 <h2 className={"text-5xl mt-8 font-carter text-neutral-800"}>{children}</h2>
                 <div className={"-bottom-6 -z-10"}>
