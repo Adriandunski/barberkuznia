@@ -16,7 +16,7 @@ export default function Topic ({hiddenX, children } : {hiddenX: number, children
 
 
     return (
-        <div ref={ref} className={"h-[8rem] overflow-hidden border-2 border-rose-600 flex justify-center"}>
+        <div ref={ref} className={"h-[8rem] overflow-hidden flex justify-center"}>
             <motion.div
                 //@ts-ignore
                 variants={variants}

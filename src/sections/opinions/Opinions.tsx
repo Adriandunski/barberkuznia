@@ -34,9 +34,9 @@ export default function Opinions() {
 
     return (
         <section  className={"pb-10 overflow-hidden"}>
-            <div className={"flex"}>
+            <div className={"flex flex-row-reverse"}>
                 <div className={"basis-1/2"}>
-                    <Topic hiddenX={-400}>Opinie</Topic>
+                    <Topic hiddenX={400}>Opinie</Topic>
                 </div>
             </div>
             <motion.div ref={refComp} drag="x" dragConstraints={{left: width, right: 0}} className={'flex p-5 space-x-3 mt-10'}>
