@@ -1,12 +1,11 @@
 import Star from "@/sections/opinions/Star";
-import {useEffect, useRef} from "react";
 
 
 export default function CardOpinion({urlImageFace, urlImageItem } :
                                     {urlImageFace: string, urlImageItem: string}) {
 
     return (
-        <div className={"relative shrink-0 basis-[30rem] flex flex-col items-center p-7 rounded-2xl shadow-2xl hover:cursor-grab"}>
+        <div id={'card_opinions'} className={"relative shrink-0 basis-[30rem] flex flex-col items-center p-7 rounded-2xl shadow-2xl hover:cursor-grab"}>
             <div className={"flex flex-col justify-center items-center space-y-5"}>
                 <div>Adam Jóźwiak</div>
                 <div className={"flex"}>

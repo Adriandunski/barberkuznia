@@ -6,7 +6,7 @@ import {useEffect} from "react";
 export default function MainPage() {
 
     return(
-        <section className={"bg-[url('/mainPage1.jpg')] bg-fixed bg-cover bg-right bg-no-repeat h-screen relative"}>
+        <section id={"main_page"} className={"bg-[url('/mainPage1.jpg')] bg-fixed bg-cover bg-right bg-no-repeat h-screen relative"}>
             <div className={"flex justify-center items-center w-full h-full"}>
                 <img src={'/białe.png'} className={'h-[95%] w-[95%] md:h-[75%] md:w-[75%] object-contain'}/>
             </div>

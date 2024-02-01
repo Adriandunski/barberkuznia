@@ -1,17 +1,28 @@
 import Topic from "@/components/Topic";
-import MapGoogle from "@/components/MapGoogle";
-import {GoogleMap} from "@react-google-maps/api";
 import RowHour from "@/sections/contacts/RowHour";
 import KafelekKontakt from "@/sections/contacts/KafelekKontakt";
+import {useAnimation} from "framer-motion";
+import {useInView} from "react-intersection-observer";
+import {useEffect} from "react";
+import MoveFromSide from "@/components/Animacje/MoveFromSide";
 
 export default function ContactUs() {
     const apiKey = 'AIzaSyBKs-5b28km9XvTArmQZobY6VoVX4vjdQQ';
+    const controls = useAnimation();
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+    }, [controls, inView]);
+
 
     return (
-        <section
+        <section id={'contact_us'}
             className={"relative flex mt-32 bg-[url('/mainPage1.jpg')] bg-fixed bg-cover bg-right bg-no-repeat pt-36 pb-20"}>
-            <div className={"absolute flex w-full -top-36 justify-center space-x-16 text-[#362C1F]"}>
-                <KafelekKontakt>
+            <div ref={ref} className={"absolute flex w-full -top-36 justify-center space-x-16 text-[#362C1F]"}>
+                <KafelekKontakt controls={controls}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                          stroke="currentColor" className="w-14 h-14 fill-[#FAEBDA]">
                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -21,7 +32,7 @@ export default function ContactUs() {
                     <a className={"text-lg"}> 723 435 267</a>
                 </KafelekKontakt>
 
-                <KafelekKontakt>
+                <KafelekKontakt controls={controls}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                          stroke="currentColor" className="w-14 h-14 fill-[#FAEBDA]">
                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -32,7 +43,7 @@ export default function ContactUs() {
                     <a className={"text-lg"}> adriandunski27@gmail.com</a>
                 </KafelekKontakt>
 
-                <KafelekKontakt>
+                <KafelekKontakt controls={controls}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                          stroke="currentColor" className="w-14 h-14 fill-[#FAEBDA]">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
@@ -54,20 +65,27 @@ export default function ContactUs() {
 
 
             <div
-                className={"basis-1/2 border-t-2 border-r-2 border-b-2 border-[#928576] rounded-r-3xl overflow-hidden"}>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.7190200488494!2d19.114398099999995!3d50.8178444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4710b5a79736496d%3A0xad1eb95ef192696c!2sBarber%20Shop%20Ku%C5%BAnia%20M%C4%99skich%20Fryzur%20Cz%C4%99stochowa!5e0!3m2!1spl!2spl!4v1706725560515!5m2!1spl!2spl"
-                    className={"w-full h-full"} loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"></iframe>
+                className={"basis-1/2 "}>
+                <MoveFromSide hiddenX={-400}>
+                    <div
+                        className={"border-t-2 border-r-2 border-b-2 border-[#FAEBDA] rounded-r-3xl overflow-hidden w-full h-full"}>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.7190200488494!2d19.114398099999995!3d50.8178444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4710b5a79736496d%3A0xad1eb95ef192696c!2sBarber%20Shop%20Ku%C5%BAnia%20M%C4%99skich%20Fryzur%20Cz%C4%99stochowa!5e0!3m2!1spl!2spl!4v1706725560515!5m2!1spl!2spl"
+                            className={"w-full h-full"} loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </MoveFromSide>
             </div>
 
             <div className={"basis-1/2 flex justify-center text-[#362C1F]"}>
                 <div
-                    className={"bg-white/30 backdrop-blur-lg backdrop-brightness-[0.80] p-12 rounded-2xl border-2 border-[#928576]"}>
-                    <Topic hiddenX={400}>Kontakt</Topic>
+                    className={"bg-white/30 backdrop-blur-lg backdrop-brightness-[0.80] p-12 rounded-2xl border-2 border-[#FAEBDA]"}>
+                    <div className={"text-[#FAEBDA]"}>
+                        <Topic hiddenX={400}>Kontakt</Topic>
+                    </div>
                     <div className={"flex flex-col items-center gap-y-5"}>
                         <h3 className={"text-2xl bg-[#FAEBDA] rounded-2xl p-2 font-medium"}>Godziny otawarcia</h3>
-                        <div className="grid grid-cols-2 gap-x-16 gap-y-4 text-xl">
+                        <div className="grid grid-cols-2 gap-x-16 gap-y-4 text-xl text-[#FAEBDA]">
                             <RowHour day={"Poniedzialek"} hour={"6:00 - 16:00"}/>
                             <RowHour day={"Wtorek"} hour={"6:00 - 16:00"}/>
                             <RowHour day={"Środa"} hour={"6:00 - 16:00"}/>
@@ -76,7 +94,8 @@ export default function ContactUs() {
                             <RowHour day={"Sobota"} hour={"6:00 - 16:00"}/>
                             <RowHour day={"Niedziela"} hour={"Zamknięte"}/>
                         </div>
-                        <div className={"flex space-x-5 justify-center fill-[#362C1F] text-[#362C1F] bg-[#FAEBDA] rounded-2xl p-2"}>
+                        <div
+                            className={"flex space-x-5 justify-center fill-[#362C1F] text-[#362C1F] bg-[#FAEBDA] rounded-2xl p-2"}>
                             <svg className={"w-10 h-10 "} viewBox="0 0 24 24"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <path

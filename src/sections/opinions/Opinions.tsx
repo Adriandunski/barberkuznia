@@ -33,7 +33,7 @@ export default function Opinions() {
     }, [controls, inView]);
 
     return (
-        <section  className={"pb-10 overflow-hidden"}>
+        <section id={'opinions'}  className={"pb-10 overflow-hidden"}>
             <div className={"flex flex-row-reverse"}>
                 <div className={"basis-1/2"}>
                     <Topic hiddenX={400}>Opinie</Topic>

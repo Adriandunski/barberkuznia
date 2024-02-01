@@ -2,7 +2,7 @@ import Topic from "@/components/Topic";
 
 export default function AboutUs() {
     return (
-        <section className={"flex flex-col-reverse p-5 space-x-5 md:flex-row lg:text-xl"}>
+        <section id={"about_us"} className={"flex flex-col-reverse p-5 space-x-5 md:flex-row lg:text-xl"}>
             <div className={"basis-1/2 flex justify-center items-center"}>
                 <div className={"flex justify-center items-center max-w-[500px] max-h-[500px] bg-[url('/zdjecieSrodka.png')] bg-cover bg-left animate-blob overflow-hidden"}>
                     <img className={"object-cover aspect-square object-left"} src={'/zdjecieSrodka.png'}/>
