@@ -5,11 +5,14 @@ import {useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {useEffect} from "react";
 import MoveFromSide from "@/components/Animacje/MoveFromSide";
+import {useMediaQuery} from "react-responsive";
+import useWindowWith from "@/components/useWindowWith";
 
 export default function ContactUs() {
-    const apiKey = 'AIzaSyBKs-5b28km9XvTArmQZobY6VoVX4vjdQQ';
     const controls = useAnimation();
     const [ref, inView] = useInView();
+    const isBigScreen = useWindowWith(768);
+
 
     useEffect(() => {
         if (inView) {
@@ -20,9 +23,18 @@ export default function ContactUs() {
 
     return (
         <section id={'contact_us'}
-            className={"relative flex mt-32 bg-[url('/mainPage1.jpg')] bg-fixed bg-cover bg-right bg-no-repeat pt-36 pb-20"}>
-            <div ref={ref} className={"absolute flex w-full -top-36 justify-center space-x-16 text-[#362C1F]"}>
-                <KafelekKontakt controls={controls}>
+                 className={"relative flex flex-col gap-7 md:flex-row mt-28 md:mt-32 bg-[url('/mainPage1.jpg')] bg-fixed bg-cover bg-right bg-no-repeat pt-5 md:pt-48 pb-20"}>
+
+
+            {isBigScreen ? "" : <div className={"absolute -top-32 flex w-full"}>
+                <div className={"md:basis-1/2 basis-3/4"}>
+                    <Topic hiddenX={-400}>Oferta</Topic>
+                </div>
+            </div>}
+
+            <div ref={ref}
+                 className={"space-y-5 flex-col md:flex-row static md:absolute px-5 flex w-full -top-0 md:-top-36 justify-center md:space-y-0 md:space-x-16 text-[#362C1F]"}>
+                <KafelekKontakt>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                          stroke="currentColor" className="w-14 h-14 fill-[#FAEBDA]">
                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -32,7 +44,7 @@ export default function ContactUs() {
                     <a className={"text-lg"}> 723 435 267</a>
                 </KafelekKontakt>
 
-                <KafelekKontakt controls={controls}>
+                <KafelekKontakt>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                          stroke="currentColor" className="w-14 h-14 fill-[#FAEBDA]">
                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -43,7 +55,7 @@ export default function ContactUs() {
                     <a className={"text-lg"}> adriandunski27@gmail.com</a>
                 </KafelekKontakt>
 
-                <KafelekKontakt controls={controls}>
+                <KafelekKontakt>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                          stroke="currentColor" className="w-14 h-14 fill-[#FAEBDA]">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
@@ -65,26 +77,30 @@ export default function ContactUs() {
 
 
             <div
-                className={"basis-1/2 "}>
+                className={"md:basis-1/2 flex justify-center items-center h-[500px] md:h-auto overflow-hidden"}>
                 <MoveFromSide hiddenX={-400}>
                     <div
-                        className={"border-t-2 border-r-2 border-b-2 border-[#FAEBDA] rounded-r-3xl overflow-hidden w-full h-full"}>
+                        className={"border-2 border-[#FAEBDA] rounded-3xl overflow-hidden w-[85%] h-[85%]"}>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.7190200488494!2d19.114398099999995!3d50.8178444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4710b5a79736496d%3A0xad1eb95ef192696c!2sBarber%20Shop%20Ku%C5%BAnia%20M%C4%99skich%20Fryzur%20Cz%C4%99stochowa!5e0!3m2!1spl!2spl!4v1706725560515!5m2!1spl!2spl"
                             className={"w-full h-full"} loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+
                 </MoveFromSide>
+
             </div>
 
-            <div className={"basis-1/2 flex justify-center text-[#362C1F]"}>
+            <div className={"md:basis-1/2 flex justify-center text-[#362C1F]"}>
                 <div
-                    className={"bg-white/30 backdrop-blur-lg backdrop-brightness-[0.80] p-12 rounded-2xl border-2 border-[#FAEBDA]"}>
-                    <div className={"text-[#FAEBDA]"}>
+                    className={"bg-white/30 backdrop-blur-lg backdrop-brightness-[0.80] px-5 pb-5 rounded-2xl border-2 border-[#FAEBDA]"}>
+
+                    {isBigScreen ? <div className={"text-[#FAEBDA]"}>
                         <Topic hiddenX={400}>Kontakt</Topic>
-                    </div>
+                    </div> : ""}
+
                     <div className={"flex flex-col items-center gap-y-5"}>
-                        <h3 className={"text-2xl bg-[#FAEBDA] rounded-2xl p-2 font-medium"}>Godziny otawarcia</h3>
+                        <h3 className={"mt-5 text-2xl bg-[#FAEBDA] rounded-2xl p-2 font-medium"}>Godziny otawarcia</h3>
                         <div className="grid grid-cols-2 gap-x-16 gap-y-4 text-xl text-[#FAEBDA]">
                             <RowHour day={"Poniedzialek"} hour={"6:00 - 16:00"}/>
                             <RowHour day={"Wtorek"} hour={"6:00 - 16:00"}/>
@@ -121,15 +137,3 @@ export default function ContactUs() {
         </section>
     );
 }
-
-// <APIProvider apiKey={apiKey}>
-//     <div className={"h-full w-full"}>
-//         <Map
-//             zoom={3}
-//             center={{lat: 22.54992, lng: 0}}
-//             gestureHandling={'greedy'}
-//             disableDefaultUI={true}
-//
-//         />
-//     </div>
-// </APIProvider>

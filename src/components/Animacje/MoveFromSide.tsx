@@ -20,7 +20,7 @@ export default function MoveFromSide({hiddenX, children} : {hiddenX: number, chi
                 initial={"hidden"}
                 transition={{type: "spring", bounce: 0.5, delay: 0.5, duration: 2}}
                 animate={controls}
-                className={"w-full h-full"}
+                className={"w-full h-full flex justify-center items-center"}
             >
                 {children}
             </motion.div>

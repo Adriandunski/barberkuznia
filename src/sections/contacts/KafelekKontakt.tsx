@@ -1,6 +1,19 @@
-import {AnimationControls, motion, useAnimation} from "framer-motion";
+'use client'
 
-export default function KafelekKontakt({children, controls}: { children: any[], controls: AnimationControls }) {
+import {AnimationControls, motion, useAnimation} from "framer-motion";
+import {useInView} from "react-intersection-observer";
+import {useEffect} from "react";
+
+export default function KafelekKontakt({children}: { children: any[]}) {
+    const controls = useAnimation();
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+    }, [controls, inView]);
+
 
     const container = {
         hidden: {opacity: 1, scale: 0},
@@ -17,17 +30,20 @@ export default function KafelekKontakt({children, controls}: { children: any[], 
     const itemVariant = {hidden: {y: 20, opacity: 0}, visible: {y: 0, opacity: 1}};
 
     return (
-        <motion.div id={'kafelek_kontakt'} variants={container} initial={"hidden"} animate={controls}
-            className={"basis-[18rem] flex flex-col items-center bg-[#C5B7A6] space-y-5 p-5 rounded-2xl shadow-2xl border-2 border-[#FAEBDA] text-[#362C1F]"}>
-            <motion.div variants={itemVariant} className={"animate-bounce"}>
-                {children[0]}
-            </motion.div>
-            <motion.div variants={itemVariant}>
-                {children[1]}
-            </motion.div>
-            <motion.div variants={itemVariant}>
-                {children[2]}
-            </motion.div>
+        <div ref={ref} className={"basis-[18rem] flex flex-col items-center bg-[#C5B7A6]  p-5 rounded-2xl shadow-2xl border-2 border-[#FAEBDA] text-[#362C1F]"}>
+            <motion.div id={'kafelek_kontakt'} variants={container} initial={"hidden"} animate={controls}
+                        className={"flex flex-col justify-center items-center space-y-5"}>
+                <motion.div variants={itemVariant} className={"animate-bounce"}>
+                    {children[0]}
+                </motion.div>
+                <motion.div variants={itemVariant}>
+                    {children[1]}
+                </motion.div>
+                <motion.div variants={itemVariant}>
+                    {children[2]}
+                </motion.div>
 
-        </motion.div>);
+            </motion.div>
+        </div>
+    );
 }

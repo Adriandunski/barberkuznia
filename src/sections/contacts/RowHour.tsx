@@ -1,3 +1,4 @@
+'use client'
 export default function RowHour({day, hour}: {day: string, hour:string}) {
     return (
         <>

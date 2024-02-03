@@ -35,7 +35,7 @@ export default function Opinions() {
     return (
         <section id={'opinions'}  className={"pb-10 overflow-hidden"}>
             <div className={"flex flex-row-reverse"}>
-                <div className={"basis-1/2"}>
+                <div className={"md:basis-1/2 basis-3/4"}>
                     <Topic hiddenX={400}>Opinie</Topic>
                 </div>
             </div>

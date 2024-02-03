@@ -2,7 +2,6 @@
 
 import {motion} from "framer-motion";
 import Lizak from "@/sections/mainPage/Lizak";
-import {useEffect} from "react";
 export default function MainPage() {
 
     return(
@@ -17,7 +16,6 @@ export default function MainPage() {
                         booksy!</p>
                 </motion.div>
             </div>
-            <Lizak side={"lewo"}></Lizak>
         </section>
     );
 }

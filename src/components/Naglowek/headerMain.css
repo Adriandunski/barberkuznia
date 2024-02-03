@@ -1,6 +1,7 @@
 @media (max-width: 768px) {
     .toHide {
         visibility: hidden;
-        display: none;
+        transform: translateY(-100%);
+        transition: all ease-in 0.5s;
     }
 }
