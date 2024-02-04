@@ -11,7 +11,6 @@ export default function Home() {
 
     return (
         <>
-            <HeaderMain></HeaderMain>
             <MainPage></MainPage>
             <AboutUs></AboutUs>
             <Services></Services>

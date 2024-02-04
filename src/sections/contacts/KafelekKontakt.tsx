@@ -1,8 +1,9 @@
 'use client'
 
-import {AnimationControls, motion, useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {useEffect} from "react";
+import {useAnimation} from "framer-motion";
+import {motion} from "framer-motion";
 
 export default function KafelekKontakt({children}: { children: any[]}) {
     const controls = useAnimation();
@@ -30,7 +31,7 @@ export default function KafelekKontakt({children}: { children: any[]}) {
     const itemVariant = {hidden: {y: 20, opacity: 0}, visible: {y: 0, opacity: 1}};
 
     return (
-        <div ref={ref} className={"basis-[18rem] flex flex-col items-center bg-[#C5B7A6]  p-5 rounded-2xl shadow-2xl border-2 border-[#FAEBDA] text-[#362C1F]"}>
+        <div ref={ref} className={"basis-[12rem] md:basis-[18rem] flex flex-col items-center bg-[#C5B7A6]  p-5 rounded-2xl shadow-2xl border-2 border-[#FAEBDA] text-[#362C1F]"}>
             <motion.div id={'kafelek_kontakt'} variants={container} initial={"hidden"} animate={controls}
                         className={"flex flex-col justify-center items-center space-y-5"}>
                 <motion.div variants={itemVariant} className={"animate-bounce"}>

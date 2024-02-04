@@ -2,7 +2,6 @@ import CardOpinion from "@/sections/opinions/CardOpinion";
 import {motion, useAnimation} from "framer-motion";
 import {useEffect, useRef, useState} from "react";
 import {useInView} from "react-intersection-observer";
-import {hidden} from "next/dist/lib/picocolors";
 import Topic from "@/components/Topic";
 
 export default function Opinions() {
@@ -34,8 +33,8 @@ export default function Opinions() {
 
     return (
         <section id={'opinions'}  className={"pb-10 overflow-hidden"}>
-            <div className={"flex flex-row-reverse"}>
-                <div className={"md:basis-1/2 basis-3/4"}>
+            <div className={"flex"}>
+                <div className={"basis-full md:basis-1/2"}>
                     <Topic hiddenX={400}>Opinie</Topic>
                 </div>
             </div>

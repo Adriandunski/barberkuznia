@@ -5,7 +5,6 @@ import {useAnimation} from "framer-motion";
 import {useInView} from "react-intersection-observer";
 import {useEffect} from "react";
 import MoveFromSide from "@/components/Animacje/MoveFromSide";
-import {useMediaQuery} from "react-responsive";
 import useWindowWith from "@/components/useWindowWith";
 
 export default function ContactUs() {
@@ -27,8 +26,8 @@ export default function ContactUs() {
 
 
             {isBigScreen ? "" : <div className={"absolute -top-32 flex w-full"}>
-                <div className={"md:basis-1/2 basis-3/4"}>
-                    <Topic hiddenX={-400}>Oferta</Topic>
+                <div className={"md:basis-1/2 basis-full"}>
+                    <Topic hiddenX={-400}>Kontakt</Topic>
                 </div>
             </div>}
 

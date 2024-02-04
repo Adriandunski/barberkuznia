@@ -1,3 +1,7 @@
+.bag {
+    backdrop-filter: blur(50px);
+}
+
 @media (max-width: 768px) {
     .toHide {
         visibility: hidden;
