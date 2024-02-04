@@ -103,7 +103,7 @@ export default function HeaderMain() {
                      className={'absolute border-2 border-[#362C1F] top-0 h-screen transition duration-500 flex flex-col items-center py-28 justify-around w-full bg-[#FAEBDA] md:flex-row md:px-8 md:py-0 md:basis-3/5 md:justify-around md:static md:h-auto  md:rounded-md toHide'}>
                     <Link href={"/#main_page"} onClick={handleClikHideMenu} className={""}>Strona Główna</Link>
                     <Link href={"/#about_us"} onClick={handleClikHideMenu} className={""}>O nas</Link>
-                    <div className={"relative flex  items-center justify-center h-auto md:h-full"} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+                    <div className={"relative flex  items-center justify-center h-auto md:h-full"} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} onClick={mouseEnter}>
                         <div className={"relative flex flex-col items-center justify-center cursor-pointer"} onClick={handleUslugi}>
                             <div className={"flex gap-x-0.5"}>
                                 <Link href={"#"}
@@ -114,11 +114,14 @@ export default function HeaderMain() {
                                      stroke="currentColor" className="h-5 w-5">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
                                 </svg>
+
                             </div>
 
                             <motion.ul variants={variants} initial={"hidden"} animate={control}
-                                       className={"subMenu md:absolute top-7 -left-2 bg-[#FAEBDA] w-[10rem] rounded-b-md"}>
-                                <li className={"p-2 cursor-pointer"}><Link onClick={handleClikHideMenu} href={'/cutting'}>Strzyżenie włosów</Link></li>
+                                                      className={"md:absolute top-7 -left-2 bg-[#FAEBDA] w-[10rem] rounded-b-md"}>
+                                <li className={"p-2 cursor-pointer"}><Link onClick={handleClikHideMenu}
+                                                                           href={'/cutting'}>Strzyżenie włosów</Link>
+                                </li>
                                 <li className={"p-2"}>Stylizacja włosów</li>
                                 <li className={"p-2"}>Trymowanie brody</li>
                             </motion.ul>

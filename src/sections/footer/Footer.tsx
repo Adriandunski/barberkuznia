@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
     return(
-        <footer className={"w-screen border-t-2 border-[#362C1F] text-[#362C1F]"}>
+        <footer className={"border-t-2 border-[#362C1F] text-[#362C1F]"}>
             <div className={" bg-[#FAEBDA] flex flex-row px-5 gap-y-10 py-7 justify-around flex-wrap shrink-0"}>
                 <div className={"basis-[20rem] flex flex-col items-center justify-center border-b-2"}>
                     <img className={'aspect-square w-[7rem]'} src={"/czarnoZlote.png"}/>

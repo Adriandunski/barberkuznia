@@ -4,7 +4,8 @@ import {motion} from "framer-motion";
 export default function MainPage() {
 
     return(
-        <section id={"main_page"} className={"bg-[url('/mainPage1.jpg')] bg-fixed bg-cover bg-right bg-no-repeat h-screen relative"}>
+        <section id={"main_page"} className={"bg-fixed bg-cover bg-right bg-no-repeat h-screen relative"}>
+            <img src={'/mainPage1.jpg'} className={"w-full h-full -z-10 absolute object-right object-cover"}/>
             <div className={"flex justify-center items-center w-full h-full"}>
                 <img alt={'logo'} src={'/białe.png'} className={'h-[95%] w-[95%] md:h-[75%] md:w-[75%] object-contain'}/>
             </div>
