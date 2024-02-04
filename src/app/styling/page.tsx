@@ -1,13 +1,12 @@
 'use client'
 
-import HeaderMain from "@/components/Naglowek/HeaderMain";
 import ContactUs from "@/sections/contacts/ContactUs";
+import StylingSection from "@/sections/subSections/StylingSection";
 
 export default function Cutting() {
     return(
         <>
-            <HeaderMain></HeaderMain>
-            <Cutting></Cutting>
+            <StylingSection></StylingSection>
             <ContactUs></ContactUs>
         </>
     );
