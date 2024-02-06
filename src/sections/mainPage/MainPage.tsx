@@ -1,6 +1,7 @@
 'use client'
 
 import {motion} from "framer-motion";
+import Link from "next/link";
 export default function MainPage() {
 
     return(
@@ -12,8 +13,12 @@ export default function MainPage() {
             <div className={"absolute bottom-0 w-full flex justify-center items-center"}>
                 <motion.div initial={{y: 200, scale: 0}} animate={{y: 0, scale: 1, transition: {delay: 2, type: "spring"}}}
                             className={"absolute bottom-10"}>
-                    <p className={"text-white font-black text-2xl border-2 border-white p-6 rounded-md"}>Umów się przez
-                        booksy!</p>
+
+                    <Link href={"https://booksy.com/pl-pl/86757_kuznia-meskich-fryzur_barber-shop_12416_czestochowa"}>
+                        <p className={"text-white font-black text-2xl border-2 border-white p-6 rounded-md"}>Umów się
+                            przez
+                            booksy!</p>
+                    </Link>
                 </motion.div>
             </div>
         </section>

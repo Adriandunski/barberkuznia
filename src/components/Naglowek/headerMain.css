@@ -2,16 +2,12 @@
     backdrop-filter: blur(50px);
 }
 
+
+
 @media (max-width: 768px) {
     .toHide {
         visibility: hidden;
         transform: translateY(-100%);
-        transition: all ease-in 0.5s;
-    }
-
-    .subMenu {
-        visibility: hidden;
-        position: absolute;
         transition: all ease-in 0.5s;
     }
 }

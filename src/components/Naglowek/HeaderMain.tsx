@@ -2,7 +2,7 @@
 
 import {useCallback, useEffect, useRef, useState} from "react";
 import {useInView} from "react-intersection-observer";
-import {motion, useAnimation} from "framer-motion";
+import {AnimatePresence, motion, useAnimation} from "framer-motion";
 import "./headerMain.css"
 import Link from "next/link";
 import useWindowWith from "@/components/useWindowWith";
@@ -19,20 +19,9 @@ export default function HeaderMain() {
     const uslugiRef = useRef<HTMLDivElement>(null);
     const isBigScreen = useWindowWith(768);
     const [hiddenMenu, setHiddenMenu] = useState(true);
-    const variants = {hidden: {scale: 0, y: -50, x: -25}, visible: {scale: 1, y: 0, x: 0}}
-    const control = useAnimation();
-
-    function mouseEnter() {
-        if (isBigScreen) {
-            control.start("visible");
-        }
-    }
-
-    function mouseLeave() {
-        if (isBigScreen) {
-            control.start("hidden");
-        }
-    }
+    const [testHide, setTestHide] = useState(false);
+    // const variants = {hidden: {scale: 0, y: -50, x: -25}, visible: {scale: 1, y: 0, x: 0}}
+    // const control = useAnimation();
 
     const setRefs = useCallback(
         (node: HTMLDivElement) => {
@@ -56,8 +45,8 @@ export default function HeaderMain() {
         }
     }
 
-    function handleUslugi() {
-        uslugiRef.current?.classList.toggle("subMenu");
+    function handleClikHideUslugi() {
+        uslugiRef.current?.classList.toggle("subMenuHidden");
     }
 
     useEffect(() => {
@@ -90,58 +79,116 @@ export default function HeaderMain() {
 
     },);
 
+    const controls = useAnimation();
+    const container = {
+        hidden: {opacity: 1, height: 0, transition: { staggerChildren: 0.02, staggerDirection: -1}},
+        visible: {
+            y: 0,
+            height: "auto",
+            opacity: 1,
+            transition: {
+                type: "spring",
+                delayChildren: 0.2,
+                staggerChildren: 0.2,
+            }
+        }
+    };
+    const itemVariant = {hidden: {x: 20, opacity: 0, transition: {duration: 0.05}}, visible: {x: 0, opacity: 1}};
+
+    function handleSubMenu() {
+        if (testHide) {
+            controls.start("hidden");
+            setTestHide(false);
+        } else {
+            controls.start("visible");
+            setTestHide(true);
+        }
+    }
+
+    function bigScreenSubEnter() {
+        if (isBigScreen) {
+            controls.start("visible");
+            setTestHide(true);
+        }
+    }
+
+    function bigScreenSubLeave() {
+        if (isBigScreen) {
+            controls.start("hidden");
+            setTestHide(false);
+        }
+    }
+
+
+
+
     return (
 
         <header ref={setRefs}
                 className={`z-10 fixed top-0 left-0 w-full transition duration-500 text-[#362C1F] font-bold md:p-7 md:h-auto`}>
-            <div className={'flex w-full md:justify-between md:items-stretch'}>
+            <nav className={'flex w-full md:justify-between md:items-stretch'}>
                 <div ref={logoKowadlo}
-                     className={'toHide transition duration-500 absolute z-50 top-5 left-5 md:flex md:items-center md:static bg-[#FAEBDA] p-2 rounded-2xl'}>
+                     className={'toHide transition duration-500 absolute z-50 top-5 left-5 md:flex md:items-center md:static bg-[#362C1F] border-2 border-[#FAEBDA] p-2 rounded-2xl'}>
                     <img alt={'zdjecie kowadla'} src={"kowadlo.png"} className={"h-10"}/>
                 </div>
                 <div ref={hiddenRef}
-                     className={'absolute border-2 border-[#362C1F] top-0 h-screen transition duration-500 flex flex-col items-center py-28 justify-around w-full bg-[#FAEBDA] md:flex-row md:px-8 md:py-0 md:basis-3/5 md:justify-around md:static md:h-auto  md:rounded-md toHide'}>
-                    <Link href={"/#main_page"} onClick={handleClikHideMenu} className={""}>Strona Główna</Link>
-                    <Link href={"/#about_us"} onClick={handleClikHideMenu} className={""}>O nas</Link>
-                    <div className={"relative flex  items-center justify-center h-auto md:h-full"} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} onClick={mouseEnter}>
-                        <div className={"relative flex flex-col items-center justify-center cursor-pointer"} onClick={handleUslugi}>
-                            <div className={"flex gap-x-0.5"}>
-                                <Link href={"#"}
-                                      className={""}>Usługi
-                                </Link>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     strokeWidth="2.5"
-                                     stroke="currentColor" className="h-5 w-5">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
-                                </svg>
+                     className={'absolute text-xl md:text-lg border-2 border-[#362C1F] top-0 h-screen transition duration-500 flex flex-col items-center py-28 justify-around w-full bg-[#FAEBDA] md:flex-row md:px-8 md:py-0 md:basis-3/5 md:justify-around md:static md:h-auto  md:rounded-md toHide'}>
 
-                            </div>
 
-                            <motion.ul variants={variants} initial={"hidden"} animate={control}
-                                                      className={"md:absolute top-7 -left-2 bg-[#FAEBDA] w-[10rem] rounded-b-md"}>
-                                <li className={"p-2 cursor-pointer"}><Link onClick={handleClikHideMenu}
-                                                                           href={'/cutting'}>Strzyżenie włosów</Link>
-                                </li>
-                                <li className={"p-2"}>Stylizacja włosów</li>
-                                <li className={"p-2"}>Trymowanie brody</li>
-                            </motion.ul>
+                    <motion.div layout className={""}>
+                        <Link onClick={hideMenu} href={"/#main_page"}>Strona Główna</Link>
+                    </motion.div>
 
-                        </div>
+                    <motion.div layout>
+                        <Link onClick={hideMenu} href={"/#about_us"}>O nas</Link>
+                    </motion.div>
+
+                    <div  className={"flex flex-col relative w-full md:w-auto"} onClick={handleSubMenu} onMouseEnter={bigScreenSubEnter} onMouseLeave={bigScreenSubLeave}>
+                        <motion.div layout className={"flex flex-row gap-x-1 cursor-pointer justify-center"}>
+                            <Link href={""}>Oferta</Link>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 strokeWidth="2.5"
+                                 stroke="currentColor" className="h-5 w-5 self-center">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
+                            </svg>
+                        </motion.div>
+                        <AnimatePresence >
+                            {testHide && <motion.div className={"left-0 top-0 mt-7 px-5 gap-y-3 md:bg-[#FAEBDA] w-full md:w-[15rem] rounded-2xl flex flex-col md:absolute self-center text-center"}
+                                                     initial={"hidden"}
+                                        variants={container}
+                                                     whileInView={"visible"}
+                                                     exit={"hidden"}>
+
+                                <motion.div className={"text-base bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1 mt-4"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"#services"}>Strzyżenie włosów</Link></motion.div>
+                                <motion.div className={"text-base bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"#services"}>Stylizacja włosów</Link></motion.div>
+                                <motion.div className={"text-base bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"#services"}>Trymowanie brody</Link></motion.div>
+                                <motion.div className={"text-base bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"#services"}>Combo</Link></motion.div>
+                                <motion.div className={"text-base bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1 mb-4"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"#services"}>Repigmentacja</Link></motion.div>
+
+                            </motion.div>}
+                        </AnimatePresence>
+
                     </div>
 
 
-                    <Link href={"/#opinions"} onClick={handleClikHideMenu} className={""}>Opinie</Link>
 
-                    {!isBigScreen ?
-                        <Link href={'#kafelek_kontakt'} onClick={handleClikHideMenu} className={""}>Kontakt</Link> : ""}
+                    <motion.div layout className={""}>
+                        <Link onClick={hideMenu} href={"/#opinions"}>Opinie</Link>
+                    </motion.div>
+
+
+                    {!isBigScreen && <motion.div layout onClick={handleClikHideMenu} className={""}>
+                        <Link onClick={hideMenu} href={"#contact_us"}>Kontakt</Link>
+                    </motion.div>}
+
 
                 </div>
 
                 {isBigScreen ? <button
-                    className={"py-3 px-4 bg-[#FAEBDA] rounded-md flex justify-center items-center toHide"}>
+                    className={"py-3 px-4 bg-[#FAEBDA] border-2 border-[#362C1F] rounded-md flex justify-center items-center toHide"}>
                     <Link href={'#kafelek_kontakt'} className={""}>Kontakt</Link>
                 </button> : ""}
-            </div>
+            </nav>
 
             {isBigScreen ? "" : <button onClick={hideMenu}
                                         className={"absolute top-5 right-5 py-3 px-3 bg-white/30 backdrop-blur-lg backdrop-brightness-[0.80] rounded-full flex justify-center items-center"}>
@@ -162,7 +209,15 @@ export default function HeaderMain() {
             </button>
             }
         </header>
-
+    // <Link className={"bg-[#362C1F] text-[#FAEBDA] p-3 rounded-lg"} href={""}>Trymowanie Brody</Link>
+    // <Link className={"bg-[#362C1F] text-[#FAEBDA] p-3 rounded-lg"} href={""}>Combo</Link>
+    // <Link className={"bg-[#362C1F] text-[#FAEBDA] p-3 rounded-lg"} href={""}>Repigmentacja Włosów / Brody</Link>
     )
         ;
 }
+
+// <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+//      strokeWidth="2.5"
+//      stroke="currentColor" className="h-5 w-5 self-center">
+//     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>
+// </svg>
