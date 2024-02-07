@@ -41,7 +41,8 @@ const config: Config = {
       'lemon': ['Lemon'],
       'unbounded': ['Unbounded'],
       'carter': ['Carter One'],
-      'nunito': ['Nunito']
+      'nunito': ['Nunito'],
+      'Righteous': ['Righteous']
     },
   },
   plugins: [],

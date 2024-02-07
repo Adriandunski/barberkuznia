@@ -23,8 +23,7 @@ export default function ContactUs() {
 
     return (
         <section id={'contact_us'}
-                 className={"relative flex flex-col gap-7 md:flex-row mt-28 md:mt-32 bg-[url('/mainPage1.jpg')] bg-fixed bg-cover bg-right bg-no-repeat pt-5 md:pt-48 pb-20"}>
-
+                 className={"relative flex flex-col gap-7 md:flex-row mt-28 md:mt-32 bg-[url('/mainPage2.jpg')] bg-fixed bg-cover bg-right bg-no-repeat pt-5 md:pt-48 pb-20"}>
 
             {isBigScreen ? "" : <div className={"absolute -top-32 flex w-full"}>
                 <div className={"md:basis-1/2 basis-full"}>
@@ -52,7 +51,7 @@ export default function ContactUs() {
                     </svg>
 
                     <p className={"text-3xl font-bold"}>Napisz</p>
-                    <a href="mailto:adres.email@example.com" className={"text-lg"}> adriandunski27@gmail.com</a>
+                    <a href="mailto:patrycja.ceglarz@o2.pl " className={"text-lg"}> patrycja.ceglarz@o2.pl </a>
                 </KafelekKontakt>
 
                 <KafelekKontakt>

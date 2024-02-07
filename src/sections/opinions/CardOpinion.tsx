@@ -1,21 +1,21 @@
 import Star from "@/sections/opinions/Star";
 
 
-export default function CardOpinion({urlImageFace, urlImageItem } :
-                                    {urlImageFace: string, urlImageItem: string}) {
+export default function CardOpinion({urlImageFace, urlImageItem, name, opinion } :
+                                    {urlImageFace: string, urlImageItem: string, name: string, opinion: string}) {
 
     return (
         <div id={'card_opinions'} className={"relative shrink-0 basis-[28rem] md:basis-[30rem] flex flex-col items-center p-7 rounded-2xl shadow-2xl hover:cursor-grab"}>
             <div className={"flex flex-col justify-center items-center space-y-5"}>
-                <div>Adam Jóźwiak</div>
+                <div>{name}</div>
                 <div className={"flex"}>
                     <Star czyZolta={true}></Star>
                     <Star czyZolta={true}></Star>
                     <Star czyZolta={true}></Star>
                     <Star czyZolta={true}></Star>
-                    <Star czyZolta={false}></Star>
+                    <Star czyZolta={true}></Star>
                 </div>
-                <div className={"text-center"}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus magna lorem, interdum eget augue eleifend, pellentesque lacinia elit. Donec efficitur massa sit amet purus cursus consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                <div className={"text-center"}><p>{opinion}</p></div>
             </div>
 
 
