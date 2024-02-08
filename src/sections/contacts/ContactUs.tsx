@@ -23,7 +23,7 @@ export default function ContactUs() {
 
     return (
         <section id={'contact_us'}
-                 className={"relative flex flex-col gap-7 md:flex-row mt-28 md:mt-32 bg-[url('/mainPage2.jpg')] bg-fixed bg-cover bg-right bg-no-repeat pt-5 md:pt-48 pb-20"}>
+                 className={"relative flex flex-col gap-7 md:flex-row mt-28 md:mt-32 bg-[url('/mainPage2.jpg')] bg-cover md:bg-right bg-bottom bg-no-repeat pt-5 md:pt-48 pb-20"}>
 
             {isBigScreen ? "" : <div className={"absolute -top-32 flex w-full"}>
                 <div className={"md:basis-1/2 basis-full"}>

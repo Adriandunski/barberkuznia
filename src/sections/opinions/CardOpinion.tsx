@@ -5,7 +5,7 @@ export default function CardOpinion({urlImageFace, urlImageItem, name, opinion }
                                     {urlImageFace: string, urlImageItem: string, name: string, opinion: string}) {
 
     return (
-        <div id={'card_opinions'} className={"relative shrink-0 basis-[28rem] md:basis-[30rem] flex flex-col items-center p-7 rounded-2xl shadow-2xl hover:cursor-grab"}>
+        <div id={'card_opinions'} className={"relative shrink-0 basis-[24rem] md:basis-[30rem] flex flex-col items-center p-7 rounded-2xl shadow-2xl hover:cursor-grab"}>
             <div className={"flex flex-col justify-center items-center space-y-5"}>
                 <div>{name}</div>
                 <div className={"flex"}>
