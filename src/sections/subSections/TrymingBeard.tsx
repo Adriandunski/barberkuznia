@@ -1,6 +1,6 @@
 import Topic from "@/components/Topic";
 
-export default function StylingSection() {
+export default function TrymingBeard() {
     return (
         <section className={'w-full'}>
             <div className={"pt-28 h-full"}>
@@ -19,7 +19,7 @@ export default function StylingSection() {
 
                     <div className={"flex justify-end"}>
                         <div className={"lg:basis-1/2 md:basis-3/4 basis-full"}>
-                            <Topic hiddenX={400}>Stylizowanie Włosów</Topic>
+                            <Topic hiddenX={400}>Trymowanie Brody</Topic>
                         </div>
                     </div>
                     <div
@@ -28,24 +28,17 @@ export default function StylingSection() {
                             <div
                                 className={"w-[80%] aspect-square rounded-full border-2 border-[#7E7263] overflow-hidden"}>
                                 <img className={"h-full w-full object-cover"}
-                                     src={"./stylizacja.jpg"}/>
+                                     src={"./trymowanie.jpg"}/>
                             </div>
 
                         </div>
                         <div className={"basis-1/2"}>
                             <div className={"border-2 border-[#7E7263] p-4 rounded-2xl"}>
                                 <p className={"text-center leading-6 font-bold lg:text-lg md:text-base"}>
-                                    Nasza usługa stylizacji włosów to idealne rozwiązanie dla osób poszukujących
-                                    profesjonalnego podejścia do swojego wyglądu. Nasz doświadczony zespół stylistów
-                                    doskonale rozumie różnorodne potrzeby i preferencje naszych klientów, dlatego
-                                    oferujemy szeroki zakres technik i stylów, aby dopasować się do każdej osobowości i
-                                    okazji.
+                                    Nasza usługa trymowania brody to idealne rozwiązanie dla mężczyzn, którzy dbają o swój wygląd i chcą zachować schludność i elegancję swojej brody. Nasz doświadczony zespół barberów doskonale rozumie różnorodne style i preferencje naszych klientów, dlatego oferujemy profesjonalne usługi trymowania brody, które są dopasowane do indywidualnych potrzeb każdego klienta.
                                 </p>
                                 <p className={"text-center leading-6 font-bold lg:text-lg mt-10 md:text-base"}>
-                                    Niezależnie od tego, czy marzysz o eleganckich lokach na specjalną okazję, czy też
-                                    pragniesz codziennej stylizacji pasującej do Twojego aktywnego trybu życia, jesteśmy
-                                    tutaj, aby Ci pomóc. Nasze usługi obejmują cięcie, koloryzację, upięcia, falowanie,
-                                    prostowanie oraz wiele innych technik, które pomogą Ci osiągnąć pożądany efekt.
+                                    Nie ważne, czy preferujesz brodę krótko przyciętą, elegancką brodę garibaldi czy też stylizację w stylu lumbersexual - jesteśmy tutaj, aby Ci pomóc osiągnąć pożądany efekt. Nasze usługi obejmują precyzyjne przycięcie i kształtowanie brody, stylizację konturów, a także pielęgnację skóry pod brodą, aby zapewnić kompleksowe podejście do Twojego wyglądu.
                                 </p>
                             </div>
                         </div>

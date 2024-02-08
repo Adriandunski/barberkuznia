@@ -64,7 +64,7 @@ export default function ContactUs() {
 
                     <div className={"font-bold flex flex-col items-center justify-center text-center"}>
                         <p className={"text-3xl"}>Odwiedź</p>
-                        <p className={"text-md"}> Barber Shop Kuźnia Męskich Fryzur Częstochowa</p>
+                        <Link href={'https://www.google.pl/maps/place/Barber+Shop+Ku%C5%BAnia+M%C4%99skich+Fryzur+Cz%C4%99stochowa/@50.8178478,19.1118232,17z/data=!3m1!4b1!4m6!3m5!1s0x4710b5a79736496d:0xad1eb95ef192696c!8m2!3d50.8178444!4d19.1143981!16s%2Fg%2F11t4_ft9vw?entry=ttu'} className={"text-md"}> Barber Shop Kuźnia Męskich Fryzur Częstochowa</Link>
                     </div>
 
                     <div className={"flex flex-col items-center text-lg"}>
@@ -82,7 +82,7 @@ export default function ContactUs() {
                         className={"border-2 border-[#FAEBDA] rounded-3xl overflow-hidden w-[85%] h-[85%]"}>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.7190200488494!2d19.114398099999995!3d50.8178444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4710b5a79736496d%3A0xad1eb95ef192696c!2sBarber%20Shop%20Ku%C5%BAnia%20M%C4%99skich%20Fryzur%20Cz%C4%99stochowa!5e0!3m2!1spl!2spl!4v1706725560515!5m2!1spl!2spl"
-                            className={"w-full h-full"} loading="lazy"
+                            className={"w-full h-full"} loading="eager"
                             referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 

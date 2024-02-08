@@ -48,7 +48,7 @@ export default function Opinions() {
                     initial={"hidden"}
                     transition={{type: "spring", delay: 0.5}}
                     animate={controls}
-                    className={"border-2 border-black rounded-2xl py-3 px-5"}>
+                    className={"border-2 border-black rounded-2xl font-bold py-3 px-5 hover:text-[#FF8960] hover:cursor-pointer hover:border-[#FF8960] hover:bg-white"}>
                     <Link target="_blank" href={"https://www.google.com/search?sca_esv=e51918ddf39b0c56&sxsrf=ACQVn0_D1FnJdjKtMFrY505aQHy5SO4gfw:1707329843951&q=barbershop-kuznia+czestochowa&uds=AMwkrPtlNfmIqxlzy6LzeiHOrfP7rY6EZKxt0T9O31LAxeMJQUJ_qiP_kZpfx-N5MiB6a2egERWVcwEzEZTtEH9qcc1lkQPENp3o08EwD1Z2WY3Fhozq3ExsMs4I87Hq2wWCbgTgNsvzaPIeVIgs2GWjAiydlJHZDQ&si=AKbGX_rcuucMgom2rba1cdwsvM2SVoIkP2btyqGMV4t0GuHIs4sGV_1tpuqR0YHG4Rzd9SeGc5NQ_Pi4DJK4HXk52YlAbPFeFMgAkFJMtyXuK4o_xV7PJH8%3D&sa=X&sqi=2&ved=2ahUKEwiyqvOm65mEAxVcQvEDHQOeCj8Q3PALegQIFBAE&biw=1317&bih=945&dpr=1"}>
                         Zobacz Wszystkie
                     </Link>

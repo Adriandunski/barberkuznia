@@ -81,7 +81,7 @@ export default function HeaderMain() {
 
     const controls = useAnimation();
     const container = {
-        hidden: {opacity: 1, height: 0, transition: { staggerChildren: 0.02, staggerDirection: -1}},
+        hidden: {opacity: 1, height: 0, transition: {when: "afterChildren", staggerChildren: 0.02, staggerDirection: -1}},
         visible: {
             y: 0,
             height: "auto",
@@ -135,16 +135,16 @@ export default function HeaderMain() {
                      className={'absolute text-xl md:text-lg border-2 border-[#362C1F] top-0 h-screen transition duration-500 flex flex-col items-center py-28 justify-around w-full bg-[#FAEBDA] md:flex-row md:px-8 md:py-0 md:basis-3/5 md:justify-around md:static md:h-auto  md:rounded-md toHide'}>
 
 
-                    <motion.div layout className={""}>
+                    <motion.div  layout whileHover={{scale: 1.05}} className={"hover:text-[#FF8960] transition"}>
                         <Link onClick={hideMenu} href={"/#main_page"}>Strona Główna</Link>
                     </motion.div>
 
-                    <motion.div layout>
+                    <motion.div layout whileHover={{scale: 1.05}} className={"hover:text-[#FF8960] transition"}>
                         <Link onClick={hideMenu} href={"/#about_us"}>O nas</Link>
                     </motion.div>
 
                     <div  className={"flex flex-col relative w-full md:w-auto"} onClick={handleSubMenu} onMouseEnter={bigScreenSubEnter} onMouseLeave={bigScreenSubLeave}>
-                        <motion.div layout className={"flex flex-row gap-x-1 cursor-pointer justify-center"}>
+                        <motion.div layout className={"flex flex-row gap-x-1 cursor-pointer justify-center hover:text-[#FF8960] transition"} whileHover={{scale: 1.05}} >
                             <Link href={""}>Oferta</Link>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                  strokeWidth="2.5"
@@ -159,11 +159,11 @@ export default function HeaderMain() {
                                                      whileInView={"visible"}
                                                      exit={"hidden"}>
 
-                                <motion.div className={"text-base bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1 mt-4"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"#services"}>Strzyżenie włosów</Link></motion.div>
-                                <motion.div className={"text-base bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"#services"}>Stylizacja włosów</Link></motion.div>
-                                <motion.div className={"text-base bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"#services"}>Trymowanie brody</Link></motion.div>
-                                <motion.div className={"text-base bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"#services"}>Combo</Link></motion.div>
-                                <motion.div className={"text-base bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1 mb-4"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"#services"}>Repigmentacja</Link></motion.div>
+                                <motion.div className={"text-base hover:bg-[#FF8960] bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1 mt-4"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"/strzyzenieWlosow"}>Strzyżenie włosów</Link></motion.div>
+                                <motion.div className={"text-base hover:bg-[#FF8960] bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"/stylizacjaWlosow"}>Stylizacja włosów</Link></motion.div>
+                                <motion.div className={"text-base hover:bg-[#FF8960] bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"/trymowanieBrody"}>Trymowanie brody</Link></motion.div>
+                                <motion.div className={"text-base hover:bg-[#FF8960] bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"/combo"}>Combo</Link></motion.div>
+                                <motion.div className={"text-base hover:bg-[#FF8960] bg-[#362C1F] text-[#FAEBDA] px-4 py-2 rounded-lg md:px-2 md:py-1 mb-4"} variants={itemVariant}><Link onClick={hideMenu} className={"w-full h-full block"} href={"/repigmentacjaBrody"}>Repigmentacja</Link></motion.div>
 
                             </motion.div>}
                         </AnimatePresence>
@@ -172,22 +172,22 @@ export default function HeaderMain() {
 
 
 
-                    <motion.div layout className={""}>
+                    <motion.div layout whileHover={{scale: 1.05}} className={"hover:text-[#FF8960] transition"}>
                         <Link onClick={hideMenu} href={"/#opinions"}>Opinie</Link>
                     </motion.div>
 
 
-                    {!isBigScreen && <motion.div layout onClick={handleClikHideMenu} className={""}>
-                        <Link onClick={hideMenu} href={"#contact_us"}>Kontakt</Link>
+                    {!isBigScreen && <motion.div layout onClick={handleClikHideMenu} className={"hover:text-[#FF8960] transition"}>
+                        <Link onClick={hideMenu} href={"#kafelek_kontakt"}>Kontakt</Link>
                     </motion.div>}
 
 
                 </div>
 
-                {isBigScreen ? <button
-                    className={"py-3 px-4 bg-[#FAEBDA] border-2 border-[#362C1F] rounded-md flex justify-center items-center toHide"}>
+                {isBigScreen ? <motion.button whileHover={{scale: 1.2, transition: {type: "spring", bounce:0.5, duration: 0.6}}}
+                    className={"hover:text-[#FF8960] py-3 px-4 bg-[#FAEBDA] border-2 border-[#362C1F] rounded-md flex justify-center items-center toHide"}>
                     <Link href={'#kafelek_kontakt'} className={""}>Kontakt</Link>
-                </button> : ""}
+                </motion.button> : ""}
             </nav>
 
             {isBigScreen ? "" : <button onClick={hideMenu}
