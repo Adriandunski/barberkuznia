@@ -17,7 +17,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" style={{scrollBehavior: 'smooth'}}>
+        <html lang="pl" style={{scrollBehavior: 'smooth'}}>
         <body className={inter.className}>
         <HeaderMain></HeaderMain>
         {children}
