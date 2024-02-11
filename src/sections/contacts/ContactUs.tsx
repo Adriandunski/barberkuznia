@@ -99,7 +99,7 @@ export default function ContactUs() {
                     </div> : ""}
 
                     <div className={"flex flex-col items-center gap-y-5"}>
-                        <h3 className={"mt-5 text-2xl bg-[#FAEBDA] rounded-2xl p-2 font-medium"}>Godziny otawarcia</h3>
+                        <h3 className={"mt-5 text-2xl bg-[#FAEBDA] rounded-2xl p-2 font-medium"}>Godziny otwarcia</h3>
                         <div className="grid grid-cols-2 gap-x-16 gap-y-4 text-xl text-[#FAEBDA]">
                             <RowHour day={"Poniedzialek"} hour={"8:00 - 16:00"}/>
                             <RowHour day={"Wtorek"} hour={"10:00 - 18:00"}/>

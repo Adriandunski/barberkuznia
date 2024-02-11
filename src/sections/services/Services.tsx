@@ -23,7 +23,7 @@ export default function Services() {
                                 włosów, dostosowane do Twojego stylu i preferencji. Zanurz się w atmosferze męskiego
                                 salonu, gdzie każde strzyżenie to wyjątkowe doświadczenie.</p>
 
-                            <Link href={"/strzyzenieWlosow"} className={"mt-5 text-lg font-bold border-2 border-[#362C1F] transition rounded-2xl px-4 py-2 hover:text-[#FF8960] hover:cursor-pointer hover:border-[#FF8960]"}>Dowiedz się więcej</Link>
+                            <Link href={"/strzyzenieWlosow"} className={"mt-5 text-center text-lg font-bold border-2 border-[#362C1F] transition rounded-2xl px-4 py-2 hover:text-[#FF8960] hover:cursor-pointer hover:border-[#FF8960]"}>Dowiedz się więcej</Link>
                         </div>
                         <p className={"lg:-rotate-6 absolute -top-5 -left-1 lg:-top-3 lg:-left-10 border-2 border-[#362C1F] py-2 px-4 rounded-md bg-[#362C1F] text-white font-bold text-xl"}>Strzyżenie
                             włosów</p>
@@ -39,7 +39,7 @@ export default function Services() {
                             <p className={"text-center"}>Przekształć swoją fryzurę w naszym barber shopie. Oferujemy
                                 różnorodne usługi stylizacji włosów, pomagając Ci osiągnąć pożądany look. Zaufaj naszym
                                 specjalistom do zadbania o Twój wygląd.</p>
-                            <Link href={"/stylizacjaWlosow"} className={"mt-5 text-lg font-bold border-2 border-[#362C1F] transition rounded-2xl px-4 py-2 hover:text-[#FF8960] hover:cursor-pointer hover:border-[#FF8960]"}>Dowiedz się więcej</Link>
+                            <Link href={"/stylizacjaWlosow"} className={"mt-5 text-center text-lg font-bold border-2 border-[#362C1F] transition rounded-2xl px-4 py-2 hover:text-[#FF8960] hover:cursor-pointer hover:border-[#FF8960]"}>Dowiedz się więcej</Link>
                         </div>
 
                         <p className={"lg:-rotate-6 absolute -top-5 -left-1 lg:-top-3 lg:-left-10 border-2 border-[#362C1F] py-2 px-4 rounded-md bg-[#362C1F] text-white font-bold text-xl"}>Stylizacja
@@ -59,7 +59,7 @@ export default function Services() {
                             <p className={"text-center"}>Dla miłośników brody! Nasze usługi trymowania brody obejmują
                                 precyzyjne cięcie, modelowanie i pielęgnację. Odkryj, jak nasz barber shop może
                                 podkreślić charakter Twojej brody, sprawiając, że będziesz wyglądał zawsze zadbany.</p>
-                            <Link href={"/trymowanieBrody"} className={"mt-5 text-lg font-bold border-2 border-[#362C1F] transition rounded-2xl px-4 py-2 hover:text-[#FF8960] hover:cursor-pointer hover:border-[#FF8960]"}>Dowiedz się więcej</Link>
+                            <Link href={"/trymowanieBrody"} className={"mt-5 text-center text-lg font-bold border-2 border-[#362C1F] transition rounded-2xl px-4 py-2 hover:text-[#FF8960] hover:cursor-pointer hover:border-[#FF8960]"}>Dowiedz się więcej</Link>
 
                         </div>
                         <p className={"lg:-rotate-6 absolute -top-5 -left-1 lg:-top-3 lg:-left-10 border-2 border-[#362C1F] py-2 px-4 rounded-md bg-[#362C1F] text-white font-bold text-xl"}>Trymowanie
@@ -77,7 +77,7 @@ export default function Services() {
                                 strzyżenie brody, to kompleksowe podejście do dbania o Twój wygląd z głową i brodą. Nasz
                                 doświadczony zespół stylistów i barberów doskonale rozumie różnorodne potrzeby i
                                 preferencje naszych klientów.</p>
-                            <Link href={"/combo"} className={"mt-5 text-lg font-bold border-2 border-[#362C1F] transition rounded-2xl px-4 py-2 hover:text-[#FF8960] hover:cursor-pointer hover:border-[#FF8960]"}>Dowiedz się więcej</Link>
+                            <Link href={"/combo"} className={"mt-5 text-center text-lg font-bold border-2 border-[#362C1F] transition rounded-2xl px-4 py-2 hover:text-[#FF8960] hover:cursor-pointer hover:border-[#FF8960]"}>Dowiedz się więcej</Link>
 
                         </div>
                         <p className={"lg:-rotate-6 absolute -top-5 -left-1 lg:-top-3 lg:-left-10 border-2 border-[#362C1F] py-2 px-4 rounded-md bg-[#362C1F] text-white font-bold text-xl"}>Combo</p>
@@ -97,7 +97,7 @@ export default function Services() {
                                 mężczyzn pragnących odzyskać intensywny kolor i jednolity wygląd swojej brody. Nasz
                                 doświadczony zespół specjalistów od pielęgnacji brody doskonale rozumie potrzeby i
                                 oczekiwania naszych klientów.</p>
-                            <Link href={"/repigmentacjaBrody"} className={"mt-5 text-lg font-bold border-2 border-[#362C1F] transition rounded-2xl px-4 py-2 hover:text-[#FF8960] hover:cursor-pointer hover:border-[#FF8960]"}>Dowiedz się więcej</Link>
+                            <Link href={"/repigmentacjaBrody"} className={"mt-5 text-center text-lg font-bold border-2 border-[#362C1F] transition rounded-2xl px-4 py-2 hover:text-[#FF8960] hover:cursor-pointer hover:border-[#FF8960]"}>Dowiedz się więcej</Link>
 
                         </div>
                         <p className={"lg:-rotate-6 absolute -top-5 -left-1 lg:-top-3 lg:-left-10 border-2 border-[#362C1F] py-2 px-4 rounded-md bg-[#362C1F] text-white font-bold text-xl"}>Repigmentacja
