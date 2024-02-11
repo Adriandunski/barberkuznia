@@ -57,10 +57,10 @@ export default function Footer() {
                                       d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/>
                             </svg>
                             <div className={"flex flex-col text-lg hover:text-[#FF8960] hover:cursor-pointer"}>
-                                <Link
+                                <Link className={"hover:text-[#FF8960]"}
                                     href={'https://www.google.pl/maps/place/Barber+Shop+Ku%C5%BAnia+M%C4%99skich+Fryzur+Cz%C4%99stochowa/@50.8178478,19.1118232,17z/data=!3m1!4b1!4m6!3m5!1s0x4710b5a79736496d:0xad1eb95ef192696c!8m2!3d50.8178444!4d19.1143981!16s%2Fg%2F11t4_ft9vw?entry=ttu'}>
-                                    <p>Jana Kilińskiego 56</p>
-                                    <p>Częstochowa 42-218</p>
+                                    <p className={"text-inherit"}>Jana Kilińskiego 56</p>
+                                    <p className={"text-inherit"}>Częstochowa 42-218</p>
                                 </Link>
 
                             </div>
