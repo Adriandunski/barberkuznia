@@ -64,12 +64,20 @@ export default function ContactUs() {
 
                     <div className={"font-bold flex flex-col items-center justify-center text-center"}>
                         <p className={"text-3xl"}>Odwiedź</p>
-                        <Link href={'https://www.google.pl/maps/place/Barber+Shop+Ku%C5%BAnia+M%C4%99skich+Fryzur+Cz%C4%99stochowa/@50.8178478,19.1118232,17z/data=!3m1!4b1!4m6!3m5!1s0x4710b5a79736496d:0xad1eb95ef192696c!8m2!3d50.8178444!4d19.1143981!16s%2Fg%2F11t4_ft9vw?entry=ttu'} className={"text-md"}> Barber Shop Kuźnia Męskich Fryzur Częstochowa</Link>
+                        <Link
+                            href={'https://www.google.pl/maps/place/Barber+Shop+Ku%C5%BAnia+M%C4%99skich+Fryzur+Cz%C4%99stochowa/@50.8178478,19.1118232,17z/data=!3m1!4b1!4m6!3m5!1s0x4710b5a79736496d:0xad1eb95ef192696c!8m2!3d50.8178444!4d19.1143981!16s%2Fg%2F11t4_ft9vw?entry=ttu'}
+                            className={"text-md hover:text-[#FFF] hover:cursor-pointer transition"}>
+                            Barber Shop Kuźnia Męskich Fryzur Częstochowa
+                        </Link>
                     </div>
 
                     <div className={"flex flex-col items-center text-lg"}>
-                        <p>Jana Kilińskiego 56</p>
-                        <p>Częstochowa 42-218</p>
+                        <Link
+                            href={'https://www.google.pl/maps/place/Barber+Shop+Ku%C5%BAnia+M%C4%99skich+Fryzur+Cz%C4%99stochowa/@50.8178478,19.1118232,17z/data=!3m1!4b1!4m6!3m5!1s0x4710b5a79736496d:0xad1eb95ef192696c!8m2!3d50.8178444!4d19.1143981!16s%2Fg%2F11t4_ft9vw?entry=ttu'}
+                            className={"hover:text-[#FFF] hover:cursor-pointer transition text-center"}>
+                            <p className={"text-inherit"}>Jana Kilińskiego 56</p>
+                            <p className={"text-inherit"}>Częstochowa 42-218</p>
+                        </Link>
                     </div>
                 </KafelekKontakt>
             </div>
@@ -111,7 +119,8 @@ export default function ContactUs() {
                         </div>
                         <div
                             className={"flex space-x-5 justify-center fill-[#362C1F] text-[#362C1F] bg-[#FAEBDA] rounded-2xl p-2"}>
-                            <Link href={"https://www.facebook.com/people/Ku%C5%BAnia-M%C4%99skich-Fryzur/100083115763343/?locale=fo_FO&paipv=0&eav=AfZnAEQD0SyNtAjgnUrxsKMTjCOQaq3BciHRfZjA6A58m5Z8nhflyLvT3voo9ZSpsR8&_rdr"}>
+                            <Link
+                                href={"https://www.facebook.com/people/Ku%C5%BAnia-M%C4%99skich-Fryzur/100083115763343/?locale=fo_FO&paipv=0&eav=AfZnAEQD0SyNtAjgnUrxsKMTjCOQaq3BciHRfZjA6A58m5Z8nhflyLvT3voo9ZSpsR8&_rdr"}>
                                 <svg className={"w-10 h-10 "} viewBox="0 0 24 24"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path
